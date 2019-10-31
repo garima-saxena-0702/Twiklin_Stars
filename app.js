@@ -3,6 +3,7 @@ const ctx = canvas.getContext('2d');
 ctx.strokeStyle = 'white';
 const totalOffsetX = canvas.offsetLeft - canvas.scrollLeft;
 const totalOffsetY = canvas.offsetTop - canvas.scrollTop;
+const roationSpeed = 1;
 
 let particleArray = [];
 
@@ -21,6 +22,7 @@ function updateCanvas() {
         }
         particleArray.forEach(element => {
             element.timeExisted--;
+            element.angle += rotationSpeed;
         });
         drawStar();
     
